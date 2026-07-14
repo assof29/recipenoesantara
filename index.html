@@ -125,6 +125,7 @@ const recipes = [
   {
     id:1,name:'Rendang',origin:'Padang, Sumatera Barat',category:'laukpauk',
     time:'4-5 jam',
+    height:'400', width:'400',
     desc:'Rendang yang empuk, kaya rempah, dan kering — legendanya masakan Padang.',
     story:'Rendang bukan sekadar makanan, ia pusaka. Dulu rendang jadi bekal perjalanan para perantau Minang karena tahan lama. Proses memasaknya butuh kesabaran penuh cinta. Makin lama dimasak, makin kaya rasanya. Kata orang Minang, rendang itu filosofi hidup: lembut di awal, mengering seiring waktu, tapi rasanya tetap tajam.',
     image:' https://www.dapurkobe.co.id/wp-content/uploads/rendang-daging-sapi-pedas.jpg',
@@ -435,7 +436,7 @@ const recipes = [
     time:'2 jam',
     desc:'Cemilan khas Palembang dari ikan tenggiri — kenyal, gurih, dan pedes manis.',
     story:'Pempek itu udah jadi identitas Palembang sejak zaman Sultan Mahmud Badaruddin II. Kata cerita, pempek diciptakan dari kreativitas orang-orang Palembang mengolah ikan sungai yang melimpah. Awalnya namanya "kelesan", terus berubah jadi "pempek" karena si penjual sering teriak "empek-empek!" Sampai sekarang, warga Palembang nggak pernah berhenti bangga sama pempek.',
-    image:'https://img-global.cpcdn.com/recipes/f4ad37e8bdbf94af/1280x1280sq80/photo.webp',
+    image:' https://cdn.yummy.co.id/content-images/images/20230829/MZZNuZpmCmthKqryArCKrCULA5SJo2qL-31363933333133333131d41d8cd98f00b204e9800998ecf8427e.jpg?x-oss-process=image/resize,w_388,h_388,m_fixed,x-oss-process=image/format,webp',
     ingredients:[
       '500 gr daging ikan tenggiri giling',
       '250 gr tepung tapioka',
@@ -509,7 +510,7 @@ const recipes = [
     time:'2,5 jam',
     desc:'Sup daging sapi khas Makassar dengan kacang tanah — beda dari yang lain.',
     story:'Coto Makassar tuh salah satu sup legendaris di Sulawesi Selatan. Jualannya udah ada sejak zaman kerajaan Gowa. Bedanya coto sama soto biasa: pakai kacang tanah yang bikin kuahnya kental dan gurih, plus tambahan ketumbar dan jintan yang wanginya kebangetan. Enak banget dimakan pagi-pagi sebelum beraktivitas.',
-    image:'https://source.unsplash.com/featured/800x600/?coto,makassar',
+    image:'https://i0.wp.com/resepkoki.id/wp-content/uploads/2016/04/Resep-Coto-Makassar.jpg?fit=500%2C453&ssl=1',
     ingredients:[
       '500 gr daging sapi (sandung lamur), potong dadu',
       '200 gr kacang tanah goreng, haluskan',
@@ -734,6 +735,7 @@ const recipes = [
   {
     id:19,name:'Martabak Manis',origin:'Indonesia (Nasional)',category:'kudapan',
     time:'45 menit',
+    height:'',
     desc:'Martabak manis tebal bersarang — topping coklat keju atau apa aja terserah kamu!',
     story:'Martabak manis sebenarnya hasil adaptasi dari martabak India dan Timur Tengah. Tapi orang Indonesia mengubahnya jadi lebih tebal, empuk, dan bersarang. Dan yang bikin beda: topping-nya! Dulu cuma coklat dan keju, sekarang ada martabak red velvet, matcha, bahkan martabak sambal. Fleksibel banget, sesuai selera anak muda zaman now.',
     image:'https://source.unsplash.com/featured/800x600/?martabak,sweetpancake',
@@ -804,9 +806,9 @@ const recipes = [
 
 const categoryNames = {
   'makanan-pokok':'Makanan Pokok',
-  'lauk':'Lauk & Daging',
-  'sup':'Sup & Soto',
-  'kudapan':'Kudapan & Minuman'
+  'lauk pauk':'Lauk pauk',
+  'berkuah':'Berkuah',
+  'kudapan':'Kudapan ',
 };
 
 let currentFilter = 'all';
@@ -904,7 +906,7 @@ document.addEventListener('keydown', e => {
     card.onclick = () => openModal(r.id);
     card.innerHTML = `
       <div class="recipe-img-wrapper">
-        <img class="recipe-img" src="${r.image}" alt="${r.name}" loading="lazy" onerror="this.style.display='none'">
+        <img class="recipe-img" src="${r.image}" alt="${r.name}" loading="lazy" onerror="this.style.display='none'" height="${r.height}" width=" ${r.width}">
         <span class="recipe-badge">${catName}</span>
         <span class="recipe-time">⏱ ${r.time}</span>
       </div>
