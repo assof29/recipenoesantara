@@ -1,27 +1,29 @@
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html lang="id">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <p>Sebagai Penuntas Mini Project PKL 2026</p>
-<title>Resep Nusantara - Kumpulan Resep Masakan Khas Indonesia By assof</title>
+<title>Noesantara - Recipe Nenek Moyang Kita</title>
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
 body{font-family:'Segoe UI',system-ui,-apple-system,sans-serif;background:#faf6f0;color:#2d2d2d;line-height:1.6}
-/* HEADER */
-header p{font-size:1.1rem;opacity:.9;margin-top:.5rem}
-header{background:linear-gradient(135deg,#ac6464 0%,#D2691E 50%,#FF8C00 100%);color:white;padding:2rem 1rem;text-align:center;position:relative;overflow:hidden}
-header p{font-size:1.1rem;opacity:.9;margin-top:.5rem}
-header::after{content:'';position:absolute;bottom:0;left:0;right:0;height:6px;background:repeating-linear-gradient(90deg, transparent,transparent 20px,#fff3 20px,#fff3 40px)}
-header h1{font-size:2.8rem;font-weight:800;letter-spacing:-1px;text-shadow:2px 2px 4px rgba(0,0,0,.3)}
-header p{font-size:1.1rem;opacity:.9;margin-top:.5rem}
+/* Nav Top */
+.pkl-text{width:100%;text-align:center;font-size:.75rem;font-weight:700;letter-spacing:2px;color:#8B0000;padding:4px 0 2px;border-bottom:1px solid #f0e0d0;margin-bottom:4px}
+/* Logo di dalam nav */
+.logo-area{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.logo{font-size:1.6rem;font-weight:900;color:#8B0000;text-decoration:none;letter-spacing:-1px}
+.logo span{color:#D2691E}
+.tag-creator{font-size:.7rem;color:#a08060;font-weight:600;background:#f5ede5;padding:2px 10px;border-radius:20px}
+/* SPECIAL HEADER (di dalam nav) */
+.nav-header{background:linear-gradient(135deg,#ac6464 0%,#D2691E 50%,#FF8C00 100%);color:white;padding:.8rem 1.5rem;border-radius:12px;text-align:center;width:100%;margin-bottom:6px}
+.nav-header .tagline{font-size:.8rem;opacity:.9;margin-top:2px}
 /* NAV & SEARCH */
-.nav-bar{background:#fff;padding:.8rem 1rem;position:sticky;top:0;z-index:100;box-shadow:0 2px 12px rgba(0,0,0,.08);display:flex;flex-wrap:wrap;gap:.6rem;align-items:center;justify-content:center}
-.search-box{flex:1;min-width:200px;max-width:400px;position:relative}
-.search-box input{width:100%;padding:.7rem 1rem .7rem 2.5rem;border:2px solid #e0d6cc;border-radius:50px;font-size:.95rem;outline:0;transition:border-color .3s;background:#f8f5f1}
+.nav-bar{background:#fff;padding:.6rem 1rem .8rem;position:sticky;top:0;z-index:100;box-shadow:0 2px 12px rgba(0,0,0,.08);display:flex;flex-wrap:wrap;gap:.5rem;align-items:center;justify-content:center}
+.search-box{flex:1;min-width:180px;max-width:360px;position:relative}
+.search-box input{width:100%;padding:.6rem 1rem .6rem 2.5rem;border:2px solid #e0d6cc;border-radius:50px;font-size:.9rem;outline:0;transition:border-color .3s;background:#f8f5f1}
 .search-box input:focus{border-color:#D2691E}
-.search-box::before{content:'\1F50D';position:absolute;left:12px;top:50%;transform:translateY(-50%);font-size:.9rem;opacity:.5}
-.filter-btn{background:#f8f5f1;border:2px solid #e0d6cc;border-radius:50px;padding:.5rem 1.1rem;font-size:.85rem;cursor:pointer;transition:all .3s;font-weight:600;color:#5a4a3a}
+.search-box::before{content:'\1F50D';position:absolute;left:12px;top:50%;transform:translateY(-50%);font-size:.85rem;opacity:.5}
+.filter-btn{background:#f8f5f1;border:2px solid #e0d6cc;border-radius:50px;padding:.4rem 1rem;font-size:.8rem;cursor:pointer;transition:all .3s;font-weight:600;color:#5a4a3a}
 .filter-btn:hover,.filter-btn.active{background:#D2691E;color:#fff;border-color:#D2691E}
 /* RECIPE GRID */
 .recipe-grid{max-width:1400px;margin:2rem auto;padding:0 1rem;display:grid;grid-template-columns:repeat(auto-fill,minmax(330px,1fr));gap:1.5rem}
@@ -42,7 +44,7 @@ header p{font-size:1.1rem;opacity:.9;margin-top:.5rem}
 .modal-overlay.active{display:flex}
 .modal-content{background:#faf6f0;border-radius:20px;max-width:800px;width:100%;max-height:90vh;overflow-y:auto;position:relative;animation:modalIn .4s ease}
 @keyframes modalIn{from{opacity:0;transform:translateY(40px) scale(.95)}to{opacity:1;transform:translateY(0) scale(1)}}
-.modal-close{position:sticky;top:15px;float:right;margin:15px;background:#fff;border:none;width:39px;height:39px;border-radius:50%;font-size:1.3rem;cursor:pointer;box-shadow:0 2px 12px rgba(0,0,0,.15);z-index:10;display:flex;align-items:center;justify-content:center;transition:transform .3s;color:#5a3a1a}
+.modal-close{position:sticky;top:15px;float:right;margin:15px;background:#fff;border:none;width:38px;height:38px;border-radius:50%;font-size:1.2rem;cursor:pointer;box-shadow:0 2px 12px rgba(0,0,0,.15);z-index:10;display:flex;align-items:center;justify-content:center;transition:transform .3s;color:#5a3a1a}
 .modal-close:hover{transform:rotate(90deg)}
 .modal-img{width:100%;max-height:400px;object-fit:cover;display:block;border-radius:20px 20px 0 0}
 .modal-body{padding:1.5rem 2rem 2rem}
@@ -66,16 +68,15 @@ footer{background:#2d2d2d;color:#aaa;text-align:center;padding:2rem;margin-top:3
 footer strong{color:#fff}
 /* RESPONSIVE */
 @media(max-width:768px){
-header h1{font-size:2rem}
 .recipe-grid{grid-template-columns:1fr}
 .modal-body{padding:1rem 1.2rem 1.5rem}
 .ingredients-list{grid-template-columns:1fr}
 .modal-img{max-height:250px}
+.logo{font-size:1.3rem}
 }
 @media(max-width:480px){
-header h1{font-size:1.6rem}
-.nav-bar{padding:.6rem}
-.search-box input{padding:.6rem 1rem .6rem 2.2rem}
+.nav-bar{padding:.5rem}
+.search-box input{padding:.5rem 1rem .5rem 2.2rem}
 }
 /* SCROLLBAR */
 ::-webkit-scrollbar{width:8px}
@@ -86,27 +87,30 @@ header h1{font-size:1.6rem}
 </head>
 <body>
 
-<header>
-  <h1>Resep Noesantara</h1>
-  <p>Kumpulan resep masakan khas Nusantara dari sejak nenek moyang kita</p>
-</header>
-
 <nav class="nav-bar">
+  <div class="pkl-text">TUGAS MINI PROJECT PKL 2026</div>
+
+  <div class="logo-area">
+    <span class="logo">Noe<span>santara</span></span>
+    <span class="tag-creator">By assof</span>
+  </div>
+
   <div class="search-box">
     <input type="text" id="searchInput" placeholder="Masak apa hari ini..." oninput="filterRecipes()">
   </div>
+
   <button class="filter-btn active" data-filter="all" onclick="setFilter('all',this)">Semua</button>
   <button class="filter-btn" data-filter="makanan-pokok" onclick="setFilter('makanan-pokok',this)">Makanan Pokok</button>
   <button class="filter-btn" data-filter="lauk" onclick="setFilter('lauk',this)">Lauk Pauk</button>
   <button class="filter-btn" data-filter="sup" onclick="setFilter('sup',this)">Berkuah</button>
-  </button>
   <button class="filter-btn" data-filter="kudapan" onclick="setFilter('kudapan',this)">Kudapan</button>
 </nav>
+
+<p style="text-align:center;padding:.5rem 1rem 0;font-size:.8rem;color:#8a7a6a;font-style:italic">Sebagai Penuntas Mini Project PKL 2026</p>
 
 <div class="recipe-grid" id="recipeGrid"></div>
 <p class="no-result" id="noResult"><span>😕</span>Resep nggak ketemu nih, coba kata kunci lain ya!</p>
 
- 
 <div class="modal-overlay" id="modalOverlay" onclick="closeModalOutside(event)">
   <div class="modal-content" id="modalContent">
     <button class="modal-close" onclick="closeModal()">✕</button>
@@ -116,21 +120,20 @@ header h1{font-size:1.6rem}
 </div>
 
 <footer>
-  <strong>Resep Nusantara</strong> &mdash; Dihidangkan dengan cinta dari dapur Nusantara. <br>
-  © 2026 &mdash; Created by Assof.
+  <strong>Noesantara</strong> &mdash; Dihidangkan dengan cinta dari dapur Nusantara. <br>
+  &copy; 2026 &mdash; Created by Assof.
 </footer>
 
 <script>
 const recipes = [
   {
-    id:1,name:'Rendang',origin:'Padang, Sumatera Barat',category:'laukpauk',
+    id:1,name:'Rendang',origin:'Padang, Sumatera Barat',category:'lauk',
     time:'4-5 jam',
-    height:'400', width:'400',
     desc:'Rendang yang empuk, kaya rempah, dan kering — legendanya masakan Padang.',
     story:'Rendang bukan sekadar makanan, ia pusaka. Dulu rendang jadi bekal perjalanan para perantau Minang karena tahan lama. Proses memasaknya butuh kesabaran penuh cinta. Makin lama dimasak, makin kaya rasanya. Kata orang Minang, rendang itu filosofi hidup: lembut di awal, mengering seiring waktu, tapi rasanya tetap tajam.',
-    image:' https://www.dapurkobe.co.id/wp-content/uploads/rendang-daging-sapi-pedas.jpg',
+    image:'https://www.dapurkobe.co.id/wp-content/uploads/rendang-daging-sapi-pedas.jpg',
     ingredients:[
-      '1 kg daging sapi (bagian paha), potong 5×5 cm',
+      '1 kg daging sapi (bagian paha), potong 5\u00d75 cm',
       '2 liter santan dari 3 butir kelapa tua',
       '200 gr cabai merah keriting, haluskan',
       '15 siung bawang merah',
@@ -162,7 +165,7 @@ const recipes = [
     time:'20 menit',
     desc:'Nasi goreng sederhana tapi juara — sarapan favorit sepanjang masa.',
     story:'Konon nasi goreng sudah ada sejak zaman Majapahit. Dulu cara orang memanfaatkan nasi sisa semalam biar nggak mubazir. Kini jadi ikon kuliner Indonesia yang mendunia. Tiap rumah punya resep rahasianya sendiri. Yang jelas, nasi goreng buatan sendiri selalu yang terenak!',
-    image: 'https://assets.tmecosys.com/image/upload/t_web_rdp_recipe_584x480_1_5x/img/recipe/ras/Assets/ae6d7be8ee924ba32b6175d12b7cfdac/Derivates/0f2747c199915780ff5efcc9fc98ffbc129d8ca4.jpg',
+    image:'https://assets.tmecosys.com/image/upload/t_web_rdp_recipe_584x480_1_5x/img/recipe/ras/Assets/ae6d7be8ee924ba32b6175d12b7cfdac/Derivates/0f2747c199915780ff5efcc9fc98ffbc129d8ca4.jpg',
     ingredients:[
       '2 piring nasi putih (lebih enak nasi semalam)',
       '3 butir telur',
@@ -188,13 +191,13 @@ const recipes = [
     ]
   },
   {
-    id:3,name:'Sate Ayam',origin:'Indonesia (Nasional)',category:'laukpauk',
+    id:3,name:'Sate Ayam',origin:'Indonesia (Nasional)',category:'lauk',
     time:'1 jam',
     desc:'Sate ayam bumbu kacang yang manis gurih — legendaris di lidah semua orang.',
     story:'Sate ayam udah jadi jajanan favorit dari pinggir jalan sampai restoran mewah. Kata sejarah, sate mulai populer di Indonesia sejak kedatangan pedagang dari India dan Timur Tengah. Tapi bumbu kacangnya? Itu murni sentuhan khas Indonesia yang bikin sate kita beda dari yang lain.',
-    image:' https://www.dapurkobe.co.id/wp-content/uploads/sate-ayam.jpg',
+    image:'https://www.dapurkobe.co.id/wp-content/uploads/sate-ayam.jpg',
     ingredients:[
-      '500 gr dada ayam fillet, potong dadu 2×2 cm',
+      '500 gr dada ayam fillet, potong dadu 2\u00d72 cm',
       '30 batang tusuk sate (rendam air biar nggak gosong)',
       '5 siung bawang putih',
       '4 sdm kecap manis',
@@ -221,7 +224,7 @@ const recipes = [
     ]
   },
   {
-    id:4,name:'Gado-Gado',origin:'Jakarta',category:'laukpauk',
+    id:4,name:'Gado-Gado',origin:'Jakarta',category:'lauk',
     time:'30 menit',
     desc:'Sayur rebus komplit disiram bumbu kacang — sehat dan mengenyangkan.',
     story:'Gado-gado tuh menu andalan ibu-ibu Betawi dari dulu. Kata "gado" artinya campur aduk, makanya isinya macem-macem. Dulu cuma sayuran biasa, sekarang udah naik kelas jadi menu favorit kafe dan restoran. Ini bukti kalau masakan rakyat selamanya bakal dicinta.',
@@ -255,11 +258,11 @@ const recipes = [
     ]
   },
   {
-    id:5,name:'Soto Ayam',origin:'Indonesia (Nasional)',category:'Berkuah',
-    time:'1 - 2jam',
+    id:5,name:'Soto Ayam',origin:'Indonesia (Nasional)',category:'sup',
+    time:'1 - 2 jam',
     desc:'Kuah kuning hangat penuh rempah — semangkuk soto bikin hati adem.',
     story:'Soto itu bukti betapa kayanya kuliner Nusantara. Hampir tiap daerah punya versi soto sendiri: Soto Lamongan, Soto Betawi, Soto Medan, Soto Banjar, banyak banget. Tapi yang paling populer tetaplah soto ayam kuah kuning. Cocok dimakan kapan aja, apalagi pas hujan.',
-    image:' https://www.dapurkobe.co.id/wp-content/uploads/soto-ayam-kuning.jpg',
+    image:'https://www.dapurkobe.co.id/wp-content/uploads/soto-ayam-kuning.jpg',
     ingredients:[
       '1 ekor ayam kampung (atau 500 gr ayam negeri)',
       '2 liter air',
@@ -297,11 +300,11 @@ const recipes = [
     ]
   },
   {
-    id:6,name:'Bakso',origin:'Indonesia (Nasional)',category:'Berkuah',
+    id:6,name:'Bakso',origin:'Indonesia (Nasional)',category:'sup',
     time:'1,5 jam',
     desc:'Pentol daging kenyal dalam kuah kaldu sapi gurih — camilan rakyat paling dicinta.',
     story:'Bakso itu salah satu kuliner peranakan Tionghoa-Indonesia yang udah melekat banget di hati. Siapa sih yang nggak suka bakso? Dari anak kecil sampai kakek-nenek, semua doyan. Tukang bakso keliling dengan gerobaknya udah jadi pemandangan khas di setiap sudut kota Indonesia.',
-    image:' https://img-global.cpcdn.com/recipes/133fe46b6b5773e4/800x800sq80/photo.webp',
+    image:'https://img-global.cpcdn.com/recipes/133fe46b6b5773e4/800x800sq80/photo.webp',
     ingredients:[
       '500 gr daging sapi giling (segar, dingin)',
       '100 gr tepung tapioka',
@@ -313,7 +316,7 @@ const recipes = [
       '1 sdt kaldu sapi bubuk',
       '1/2 sdt baking powder',
       'Es batu secukupnya',
-      'kuah',
+      'KUAH:',
       '500 gr tulang sapi',
       '3 liter air',
       '5 siung bawang putih, geprek',
@@ -337,7 +340,7 @@ const recipes = [
     time:'20 menit',
     desc:'Mi goreng spesial dengan sentuhan kecap — sederhana tapi bikin nagih.',
     story:'Mi goreng itu jurus pamungkas kalau lagi bingung mau masak apa. Tinggal tumis, campur mi, beres! Tapi jangan salah, mi goreng Indonesia itu juara dunia lho. Tahun 2017 mi goreng buatan Indonesia dinobatin jadi mi instan terenak sejagad. Keren kan?',
-    image:' https://img-global.cpcdn.com/recipes/c0d89488c69d25f3/400x800sq40/photo.webp',
+    image:'https://img-global.cpcdn.com/recipes/c0d89488c69d25f3/400x800sq40/photo.webp',
     ingredients:[
       '2 bungkus mi telur (atau mi instan tanpa bumbu)',
       '2 butir telur',
@@ -369,7 +372,7 @@ const recipes = [
     time:'3-4 jam',
     desc:'Nangka muda manis dimasak santan — ikon kuliner Jogja yang legendaris.',
     story:'Gudeg tuh makanan khas Jogja yang legend banget. Konon udah ada sejak abad ke-15, pas jaman Kerajaan Mataram. Warna merah kecokelatan pada gudeg berasal dari daun jati yang bikin rasanya makin otentik. Makin lama dimasak, makin enak. Inilah kenapa gudeg selalu dirindukan',
-    image:' https://img-global.cpcdn.com/recipes/39149a36d4e36fa3/1280x1280sq80/photo.webp',
+    image:'https://img-global.cpcdn.com/recipes/39149a36d4e36fa3/1280x1280sq80/photo.webp',
     ingredients:[
       '1 kg nangka muda, potong-potong',
       '1 liter santan dari 2 butir kelapa',
@@ -398,11 +401,11 @@ const recipes = [
     ]
   },
   {
-    id:9,name:'Rawon',origin:'Surabaya, Jawa Timur',category:'berkuah',
+    id:9,name:'Rawon',origin:'Surabaya, Jawa Timur',category:'sup',
     time:'2 jam',
     desc:'Sup daging hitam khas Surabaya — kuah kluwek yang kaya antioksidan.',
     story:'Rawon itu sup daging yang kuahnya hitam pekat karena pakai kluwek. Buat yang pertama liat pasti kaget: "Ini beneran dimakan?" Tapi begitu nyobain, baru tahu kenapa rawon jadi rebutan dari Surabaya sampai pelosok Jawa Timur. Kluwek bikin rawon punya rasa earthy yang nggak ada duanya.',
-    image:' https://img-global.cpcdn.com/recipes/492807daca9b4820/1280x1280sq80/photo.webp',
+    image:'https://img-global.cpcdn.com/recipes/492807daca9b4820/1280x1280sq80/photo.webp',
     ingredients:[
       '500 gr daging sapi (sandung lamur/sengkel), potong dadu',
       '2 liter air',
@@ -436,7 +439,7 @@ const recipes = [
     time:'2 jam',
     desc:'Cemilan khas Palembang dari ikan tenggiri — kenyal, gurih, dan pedes manis.',
     story:'Pempek itu udah jadi identitas Palembang sejak zaman Sultan Mahmud Badaruddin II. Kata cerita, pempek diciptakan dari kreativitas orang-orang Palembang mengolah ikan sungai yang melimpah. Awalnya namanya "kelesan", terus berubah jadi "pempek" karena si penjual sering teriak "empek-empek!" Sampai sekarang, warga Palembang nggak pernah berhenti bangga sama pempek.',
-    image:' https://cdn.yummy.co.id/content-images/images/20230829/MZZNuZpmCmthKqryArCKrCULA5SJo2qL-31363933333133333131d41d8cd98f00b204e9800998ecf8427e.jpg?x-oss-process=image/resize,w_388,h_388,m_fixed,x-oss-process=image/format,webp',
+    image:'https://cdn.yummy.co.id/content-images/images/20230829/MZZNuZpmCmthKqryArCKrCULA5SJo2qL-31363933333133333131d41d8cd98f00b204e9800998ecf8427e.jpg?x-oss-process=image/resize,w_388,h_388,m_fixed,x-oss-process=image/format,webp',
     ingredients:[
       '500 gr daging ikan tenggiri giling',
       '250 gr tepung tapioka',
@@ -467,11 +470,11 @@ const recipes = [
     ]
   },
   {
-    id:11,name:'Ayam Betutu',origin:'Bali',category:'laukpauk',
+    id:11,name:'Ayam Betutu',origin:'Bali',category:'lauk',
     time:'3 jam',
     desc:'Ayam utuh dibalut bumbu base genep khas Bali — pedas nampol!',
     story:'Ayam Betutu adalah mahakarya kuliner Bali yang bikin lidah goyang. "Betutu" artinya dibungkus, karena proses masaknya ayam dibungkus daun pisang atau daun kelapa lalu dipanggang. Dulu cuma disajikan di upacara adat, sekarang udah jadi favorit di restoran dan warung-warung Bali. Makin pedas makin becanda!',
-    image:' https://img-global.cpcdn.com/recipes/940aa9ddc110f0fb/1280x1280sq80/photo.webp',
+    image:'https://img-global.cpcdn.com/recipes/940aa9ddc110f0fb/1280x1280sq80/photo.webp',
     ingredients:[
       '1 ekor ayam kampung (utuh, bersihkan)',
       '2 sdm air jeruk nipis',
@@ -500,13 +503,13 @@ const recipes = [
       'Campur bumbu halus dengan bumbu cemplung: serai iris, daun jeruk, daun salam, garam, dan gula. Aduk rata.',
       'Balurkan bumbu ke seluruh permukaan ayam, luar dan dalam. Pijat-pijat ayam biar bumbu meresap. Sisakan bumbu.',
       'Bungkus ayam dengan daun pisang atau aluminium foil. Pastikan bungkus rapat.',
-      'Kukus ayam selama 1,5 jam sampai empuk. Setelah itu, panggang di oven suhu 180°C selama 30 menit sampai kecokelatan. Atau bisa juga langsung dipanggang di atas bara.',
+      'Kukus ayam selama 1,5 jam sampai empuk. Setelah itu, panggang di oven suhu 180\u00b0C selama 30 menit sampai kecokelatan. Atau bisa juga langsung dipanggang di atas bara.',
       'Buka bungkusan, sajikan ayam betutu dengan sisa bumbu di atasnya. Temani dengan nasi hangat, sambal matah, dan plecing kangkung.',
       'Makan pakai tangan langsung lebih nikmat!'
     ]
   },
   {
-    id:12,name:'Coto Makassar',origin:'Makassar, Sulawesi Selatan',category:'Berkuah',
+    id:12,name:'Coto Makassar',origin:'Makassar, Sulawesi Selatan',category:'sup',
     time:'2,5 jam',
     desc:'Sup daging sapi khas Makassar dengan kacang tanah — beda dari yang lain.',
     story:'Coto Makassar tuh salah satu sup legendaris di Sulawesi Selatan. Jualannya udah ada sejak zaman kerajaan Gowa. Bedanya coto sama soto biasa: pakai kacang tanah yang bikin kuahnya kental dan gurih, plus tambahan ketumbar dan jintan yang wanginya kebangetan. Enak banget dimakan pagi-pagi sebelum beraktivitas.',
@@ -576,7 +579,7 @@ const recipes = [
     ]
   },
   {
-    id:14,name:'Lumpia Semarang',origin:'Semarang, Jawa Tengah',category:'kudapan ',
+    id:14,name:'Lumpia Semarang',origin:'Semarang, Jawa Tengah',category:'kudapan',
     time:'1 jam',
     desc:'Lumpia isi rebung dan telur — garing di luar, isi penuh di dalam.',
     story:'Lumpia Semarang adalah hasil akulturasi Tionghoa dan Jawa. Konon diciptakan oleh seorang Tionghoa peranakan di Semarang yang memadukan kulit lumpia Tionghoa dengan isian rebung khas Jawa. Bedanya lumpia Semarang sama lumpia lain? Ukurannya lebih besar dan isiannya lebih komplet. Dan yang paling penting, bumbunya berempah!',
@@ -616,11 +619,11 @@ const recipes = [
     ]
   },
   {
-    id:15,name:'Sop Buntut',origin:'Indonesia (Nasional)',category:'Berkuah',
+    id:15,name:'Sop Buntut',origin:'Indonesia (Nasional)',category:'sup',
     time:'2,5 jam',
     desc:'Sup ekor sapi berkaldu bening dengan sayuran — elegan dan menghangatkan.',
     story:'Sop buntut itu salah satu makanan yang bikin kita merasa dimanja. Potongan ekor sapi yang empuk, kuah bening yang gurih, plus wortel dan kentang yang bikin kenyang. Dulu jadi favorit di jamuan Belanda, tapi sekarang udah jadi milik semua. Sop buntut enak banget dimakan pas hujan atau lagi kangen suasana rumahan.',
-    image:' https://img-global.cpcdn.com/recipes/931bc45944091d8d/1280x1280sq80/photo.webp',
+    image:'https://img-global.cpcdn.com/recipes/931bc45944091d8d/1280x1280sq80/photo.webp',
     ingredients:[
       '1 kg buntut sapi (ekor sapi), potong ruas',
       '3 liter air',
@@ -649,7 +652,7 @@ const recipes = [
     ]
   },
   {
-    id:16,name:'Tahu Telur',origin:'Surabaya, Jawa Timur',category:'laukpauk',
+    id:16,name:'Tahu Telur',origin:'Surabaya, Jawa Timur',category:'lauk',
     time:'30 menit',
     desc:'Tahu goreng dicampur telur, disiram bumbu kacang — murah meriah tapi bikin kenyang.',
     story:'Tahu telur alias tahu tek-tek adalah jajanan khas Surabaya yang bikin rindu. Penjualnya dulu keliling pakai gerobak sambil memukul-mukul mangkuk porselen pake sendok — tek tek tek! Suaranya udah kayak alarm lapar buat anak-anak 90-an. Sekarang walau jarang keliling, rasanya nggak berubah: juara!',
@@ -685,7 +688,7 @@ const recipes = [
     time:'45 menit',
     desc:'Jajanan pasar legendaris — bola ketan hijau isi gula merah, digulung parutan kelapa.',
     story:'Klepon itu jajanan pasar yang udah eksis sejak zaman nenek moyang kita. Dulu klepon cuma dijual di pasar-pasar tradisional, sekarang udah naik kelas jadi dessert di hotel berbintang. Rahasianya ada di "ledakan" gula merah di dalemnya pas digigit. Tapi hati-hati, gulanya panas!',
-    image:' https://www.dapurkobe.co.id/wp-content/uploads/klepon-manis.jpg',
+    image:'https://www.dapurkobe.co.id/wp-content/uploads/klepon-manis.jpg',
     ingredients:[
       '250 gr tepung ketan putih',
       '50 gr tepung beras',
@@ -711,7 +714,7 @@ const recipes = [
     time:'15 menit',
     desc:'Minuman es campur khas Indonesia — alpukat, kelapa muda, dan nangka dalam kuah susu.',
     story:'Es teler diciptakan pada tahun 1982 oleh seorang pedagang di Jakarta bernama Murniati Widjaja. Awalnya coba-coba campur alpukat, kelapa muda, dan nangka, lalu dikasih susu kental manis plus es serut. Ternyata laris manis! Malah jadi merek es krim terkenal sekarang. Kreativitas sederhana yang jadi ikon!',
-    image:' https://wiratech.co.id/wp-content/uploads/2025/09/es-campur-untuk-usaha.jpg',
+    image:'https://wiratech.co.id/wp-content/uploads/2025/09/es-campur-untuk-usaha.jpg',
     ingredients:[
       '1 buah alpukat mentega, keruk dagingnya',
       '200 gr kelapa muda, keruk panjang',
@@ -735,10 +738,9 @@ const recipes = [
   {
     id:19,name:'Martabak Manis',origin:'Indonesia (Nasional)',category:'kudapan',
     time:'45 menit',
-    height:'',
     desc:'Martabak manis tebal bersarang — topping coklat keju atau apa aja terserah kamu!',
     story:'Martabak manis sebenarnya hasil adaptasi dari martabak India dan Timur Tengah. Tapi orang Indonesia mengubahnya jadi lebih tebal, empuk, dan bersarang. Dan yang bikin beda: topping-nya! Dulu cuma coklat dan keju, sekarang ada martabak red velvet, matcha, bahkan martabak sambal. Fleksibel banget, sesuai selera anak muda zaman now.',
-    image:' https://img-global.cpcdn.com/recipes/19d801f75edf885a/1280x1280sq80/photo.webp',
+    image:'https://img-global.cpcdn.com/recipes/19d801f75edf885a/1280x1280sq80/photo.webp',
     ingredients:[
       '250 gr tepung terigu protein tinggi',
       '2 sdm gula pasir',
@@ -806,9 +808,9 @@ const recipes = [
 
 const categoryNames = {
   'makanan-pokok':'Makanan Pokok',
-  'lauk pauk':'Lauk pauk',
-  'berkuah':'Berkuah',
-  'kudapan':'Kudapan ',
+  'lauk':'Lauk Pauk',
+  'sup':'Berkuah',
+  'kudapan':'Kudapan'
 };
 
 let currentFilter = 'all';
@@ -866,14 +868,14 @@ function openModal(id) {
 
   body.innerHTML = `
     <h2>${r.name}</h2>
-    <p class="origin">${r.origin} | ⏱ ${r.time}</p>
+    <p class="origin">${r.origin} | \u23f1 ${r.time}</p>
     <p class="story">${r.story}</p>
     <div class="ingredients-section">
-      <h3>🛒 Bahan-Bahan</h3>
+      <h3>\u{1F6D2} Bahan-Bahan</h3>
       <ul class="ingredients-list">${ings}</ul>
     </div>
     <div class="steps-section">
-      <h3>👨‍🍳 Cara Memasak</h3>
+      <h3>\u{1F468}\u200D\u{1F373} Cara Memasak</h3>
       <ol class="steps-list">${steps}</ol>
     </div>
   `;
@@ -892,7 +894,6 @@ document.addEventListener('keydown', e => {
   if (e.key === 'Escape') closeModal();
 });
 
-// Render cards
 (function render() {
   const grid = document.getElementById('recipeGrid');
   recipes.forEach(r => {
@@ -906,17 +907,17 @@ document.addEventListener('keydown', e => {
     card.onclick = () => openModal(r.id);
     card.innerHTML = `
       <div class="recipe-img-wrapper">
-        <img class="recipe-img" src="${r.image}" alt="${r.name}" loading="lazy" onerror="this.style.display='none'" height="${r.height}" width=" ${r.width}">
+        <img class="recipe-img" src="${r.image}" alt="${r.name}" loading="lazy" onerror="this.style.display='none'">
         <span class="recipe-badge">${catName}</span>
-        <span class="recipe-time">⏱ ${r.time}</span>
+        <span class="recipe-time">\u23f1 ${r.time}</span>
       </div>
       <div class="recipe-info">
         <h3>${r.name}</h3>
         <p class="recipe-origin">${r.origin}</p>
         <p class="recipe-desc">${r.desc}</p>
         <div class="recipe-meta">
-          <span>🍽 ${r.ingredients.length} bahan</span>
-          <span>👨‍🍳 ${r.steps.length} langkah</span>
+          <span>\u{1F37D} ${r.ingredients.length} bahan</span>
+          <span>\u{1F468}\u200D\u{1F373} ${r.steps.length} langkah</span>
         </div>
       </div>
     `;
@@ -926,4 +927,4 @@ document.addEventListener('keydown', e => {
 </script>
 
 </body>
-</html>
+</html
